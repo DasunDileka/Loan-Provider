@@ -40,5 +40,10 @@ namespace Loan_Provide.Controllers
             return Ok(productc);
         }
 
+
+        public async Task<IActionResult> UpdateContact()
+        {
+
+        }
     }
 }
