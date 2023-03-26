@@ -62,20 +62,20 @@ namespace Loan_Provide.Controllers
 
         [HttpPut]
         [Route("{id}")]
-        public async Task<IActionResult> UpdateProduct([FromRoute] int id, UpdateProductDto updateProductDto)
+        public async Task<IActionResult> UpdateProduct([FromRoute] int id, ProductDto ProductDto)
         {
             var products = await dbContext.Product.FindAsync(id);
             if (products != null)
             {
                
-                products.Image = updateProductDto.Image;
-                products.Name = updateProductDto.Name;
-                products.Description = updateProductDto.Description;
-                products.Price = updateProductDto.Price;
-                products.Quantity = updateProductDto.Quantity;
-                products.UserId = updateProductDto.UserId;
-                products.CategoryId = updateProductDto.CategoryId;
-                products.BrandId = updateProductDto.BrandId;
+                products.Image = ProductDto.Image;
+                products.Name = ProductDto.Name;
+                products.Description = ProductDto.Description;
+                products.Price = ProductDto.Price;
+                products.Quantity = ProductDto.Quantity;
+                products.UserId = ProductDto.UserId;
+                products.CategoryId = ProductDto.CategoryId;
+                products.BrandId = ProductDto.BrandId;
                 await dbContext.SaveChangesAsync();
                 return Ok(products);
             }
