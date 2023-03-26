@@ -6,7 +6,10 @@ using System.Threading.Tasks;
 
 namespace DataLayer.Model
 {
-    internal class Category
+    public class Category
     {
+        public int Id { get; set; }
+        public string Name { get; set; }
+
     }
 }

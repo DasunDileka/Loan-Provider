@@ -26,8 +26,8 @@ namespace Loan_Provide.Controllers
         }
 
         [HttpGet]
-        [Route("{id:guid}")]
-        public async Task<IActionResult> GetProduct([FromRoute] Guid id)
+        [Route("{id}")]
+        public async Task<IActionResult> GetProduct([FromRoute] int id)
         {
             var products = await dbContext.Product.FindAsync(id);
             if (products==null)
@@ -43,11 +43,15 @@ namespace Loan_Provide.Controllers
         {
             var productc = new Product()
             {
-                Id = Guid.NewGuid(),
+                
                 Image = addProduct.Image,
                 Name = addProduct.Name,
                 Description = addProduct.Description,
                 Price = addProduct.Price,
+                Quantity=addProduct.Quantity,
+                UserId=addProduct.UserId,
+                CategoryId=addProduct.CategoryId,
+                BrandId=addProduct.BrandId
             };
             await dbContext.Product.AddAsync(productc);
             await dbContext.SaveChangesAsync();
@@ -57,8 +61,8 @@ namespace Loan_Provide.Controllers
 
 
         [HttpPut]
-        [Route("{id:guid}")]
-        public async Task<IActionResult> UpdateProduct([FromRoute] Guid id, UpdateProductDto updateProductDto)
+        [Route("{id}")]
+        public async Task<IActionResult> UpdateProduct([FromRoute] int id, UpdateProductDto updateProductDto)
         {
             var products = await dbContext.Product.FindAsync(id);
             if (products != null)
@@ -68,6 +72,10 @@ namespace Loan_Provide.Controllers
                 products.Name = updateProductDto.Name;
                 products.Description = updateProductDto.Description;
                 products.Price = updateProductDto.Price;
+                products.Quantity = updateProductDto.Quantity;
+                products.UserId = updateProductDto.UserId;
+                products.CategoryId = updateProductDto.CategoryId;
+                products.BrandId = updateProductDto.BrandId;
                 await dbContext.SaveChangesAsync();
                 return Ok(products);
             }
@@ -75,8 +83,8 @@ namespace Loan_Provide.Controllers
         }
 
         [HttpDelete]
-        [Route("{id:guid}")]
-        public async Task<IActionResult> DeleteContact(Guid id)
+        [Route("{id}")]
+        public async Task<IActionResult> DeleteContact(int id)
         {
             var products = await dbContext.Product.FindAsync(id);
             if (products != null)

@@ -10,8 +10,9 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddDbContext<ContactsAPIDbContext>(option =>
-option.UseInMemoryDatabase("ContactsDb"));
-
+option.UseSqlServer("Data Source=DESKTOP-56ORLLM;Initial Catalog=SQL;Integrated Security=True;Trusted_Connection=True;TrustServerCertificate=true;MultipleActiveResultSets=true;"));;
+/*builder.Services.AddDbContext<ContactsAPIDbContext>(option =>
+option.UseSqlServer(builder.Configuration.GetConnectionString("ContactAPIConnectionString")));*/
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
