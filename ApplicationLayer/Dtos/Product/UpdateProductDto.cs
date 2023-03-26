@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ApplicationLayer
+namespace ApplicationLayer.Dtos.Product
 {
-    public class ProductDto
+    public class UpdateProductDto
     {
         public string Image { get; set; }
 
