@@ -4,18 +4,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DataLayer.Model
+namespace ApplicationLayer.Dtos.Product
 {
-    public class Product
-    {//check id colume
-        public int Id { get; set; }
+    public class UpdateProductDto
+    {
         public string Image { get; set; }
 
         public string Name { get; set; }
 
         public string Description { get; set; }
 
-        public double Price { get; set; }
+        public float Price { get; set; }
 
         public int Quantity { get; set; }
 
@@ -24,9 +23,5 @@ namespace DataLayer.Model
         public int CategoryId { get; set; }
 
         public int BrandId { get; set; }
-
-
-
-
     }
 }

@@ -4,16 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ApplicationLayer
+namespace ApplicationLayer.Dtos.Product
 {
-    public class ProductDto
+    public class BrandDto
     {
-        public string Image { get; set; }
-
         public string Name { get; set; }
 
         public string Description { get; set; }
 
-        public float Price { get; set; }
     }
 }

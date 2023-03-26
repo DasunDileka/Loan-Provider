@@ -4,11 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DataLayer.Model
+namespace ApplicationLayer.Dtos.Product
 {
-    public class Product
-    {//check id colume
-        public int Id { get; set; }
+    public class ProductDto
+    {
         public string Image { get; set; }
 
         public string Name { get; set; }
@@ -24,9 +23,5 @@ namespace DataLayer.Model
         public int CategoryId { get; set; }
 
         public int BrandId { get; set; }
-
-
-
-
     }
 }
