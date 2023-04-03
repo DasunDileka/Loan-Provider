@@ -8,7 +8,6 @@ namespace ApplicationLayer.Dtos.Product
 {
     public class ProductDto
     {
-        public string Image { get; set; }
 
         public string Name { get; set; }
 

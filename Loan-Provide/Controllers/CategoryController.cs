@@ -43,6 +43,7 @@ namespace Loan_Provide.Controllers
             var Categoryc = new Category()
             {
                 Name = addCategory.Name,
+                
               
             };
             await dbContext.Category.AddAsync(Categoryc);
