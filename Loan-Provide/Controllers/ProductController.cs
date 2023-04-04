@@ -58,8 +58,6 @@ namespace Loan_Provide.Controllers
             return Ok(productc);
         }
 
-
-
         [HttpPut]
         [Route("{id}")]
         public async Task<IActionResult> UpdateProduct([FromRoute] int id, ProductDto ProductDto)

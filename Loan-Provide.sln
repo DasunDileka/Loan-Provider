@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.4.33122.133
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Loan-Provide", "Loan-Provide\Loan-Provide.csproj", "{6242F4A7-F388-4FB3-A93A-6EF60F82A50F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Loan-Provide", "Loan-Provide\Loan-Provide.csproj", "{6242F4A7-F388-4FB3-A93A-6EF60F82A50F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataLayer", "DataLayer\DataLayer.csproj", "{2A52587A-6C29-42B9-8437-D03EE8EFE584}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataLayer", "DataLayer\DataLayer.csproj", "{2A52587A-6C29-42B9-8437-D03EE8EFE584}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApplicationLayer", "ApplicationLayer\ApplicationLayer.csproj", "{D82643D5-6479-4F57-A088-5C5D30A76590}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ApplicationLayer", "ApplicationLayer\ApplicationLayer.csproj", "{D82643D5-6479-4F57-A088-5C5D30A76590}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
