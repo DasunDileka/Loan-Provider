@@ -24,6 +24,7 @@ namespace Loan_Provide.Controllers
             return Ok(await dbContext.Category.ToListAsync());
         }
 
+
         [HttpGet]
         [Route("{id}")]
         public async Task<IActionResult> GetCategory([FromRoute] int id)
@@ -43,6 +44,7 @@ namespace Loan_Provide.Controllers
             var Categoryc = new Category()
             {
                 Name = addCategory.Name,
+                
               
             };
             await dbContext.Category.AddAsync(Categoryc);

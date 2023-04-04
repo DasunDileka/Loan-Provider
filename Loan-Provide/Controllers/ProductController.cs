@@ -44,7 +44,7 @@ namespace Loan_Provide.Controllers
             var productc = new Product()
             {
                 
-                Image = addProduct.Image,
+              
                 Name = addProduct.Name,
                 Description = addProduct.Description,
                 Price = addProduct.Price,
@@ -58,8 +58,6 @@ namespace Loan_Provide.Controllers
             return Ok(productc);
         }
 
-
-
         [HttpPut]
         [Route("{id}")]
         public async Task<IActionResult> UpdateProduct([FromRoute] int id, ProductDto ProductDto)
@@ -68,7 +66,7 @@ namespace Loan_Provide.Controllers
             if (products != null)
             {
                
-                products.Image = ProductDto.Image;
+                
                 products.Name = ProductDto.Name;
                 products.Description = ProductDto.Description;
                 products.Price = ProductDto.Price;

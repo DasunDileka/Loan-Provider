@@ -9,7 +9,6 @@ namespace DataLayer.Model
     public class Product
     {//check id colume
         public int Id { get; set; }
-        public string Image { get; set; }
 
         public string Name { get; set; }
 
