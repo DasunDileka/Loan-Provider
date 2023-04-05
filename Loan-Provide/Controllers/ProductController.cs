@@ -22,7 +22,23 @@ namespace Loan_Provide.Controllers
         [HttpGet]
         public async Task<IActionResult> GetProducts()
         {
-            return Ok(await dbContext.Product.ToListAsync());
+
+            var result = from a in dbContext.Product
+                         join b in dbContext.Brand on a.BrandId equals b.Id
+                         join c in dbContext.Category on a.CategoryId equals c.Id
+                         join d in dbContext.User on a.UserId equals d.Id
+                         select new 
+                         {
+                             Id= a.Id,
+                             Name = a.Name,
+                             Description = a.Description,
+                             Price = a.Price,
+                             Quantity = a.Quantity,
+                             Customer = d.Name,
+                             Category = c.Name,
+                             Brand = b.Name
+                         };
+            return Ok(result);
         }
 
         [HttpGet]
@@ -64,9 +80,7 @@ namespace Loan_Provide.Controllers
         {
             var products = await dbContext.Product.FindAsync(id);
             if (products != null)
-            {
-               
-                
+            { 
                 products.Name = ProductDto.Name;
                 products.Description = ProductDto.Description;
                 products.Price = ProductDto.Price;

@@ -16,7 +16,20 @@ namespace Loan_Provide.Controllers
         [HttpGet]
         public async Task<IActionResult> GetLoan()
         {
-            return Ok(await dbContext.Loan.ToListAsync());
+            var result = from a in dbContext.Loan
+                         join iua in dbContext.User on a.UserId equals iua.Id
+                         select new
+                          {
+                              Id=iua.Id,
+                              Customer = iua.Name,
+                              LoanDate = a.LoanDate,
+                              LoanBalance = a.loanBalance,
+                              UsedAmount = a.UsedAmount,
+                              InstallmentPlan = a.InstallmentPlan,
+                              
+                          };
+
+            return Ok();
         }
 
 

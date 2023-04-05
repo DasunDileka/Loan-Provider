@@ -2,6 +2,7 @@
 using DataLayer;
 using DataLayer.Model;
 using Microsoft.AspNetCore.Mvc;
+using System.ComponentModel.DataAnnotations;
 
 namespace Loan_Provide.Controllers
 {
@@ -32,5 +33,28 @@ namespace Loan_Provide.Controllers
             return Ok(Userc);
         }
 
+        [HttpGet]
+       // [Route("{Login}")]
+        public IActionResult Login([Required] string Name,[Required] string password, [Required] string UserType)
+        {
+            var display = dbContext.User.Where(m => m.Name == Name && m.Password == password).FirstOrDefault();
+            if (display != null)
+            {
+                if (UserType == "Admin")
+                {
+                    return Ok();
+                }
+                else
+                {
+                    return BadRequest();
+                }
+            }
+            else
+            
+                return BadRequest();
+            
+
+      
+        }
     }
 }

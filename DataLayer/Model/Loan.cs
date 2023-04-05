@@ -10,7 +10,7 @@ namespace DataLayer.Model
     {
         public int Id { get; set; }
 
-        public int ProductId { get; set; }
+        public int UserId { get; set; }
         public DateTime LoanDate { get; set; }
         public double loanBalance { get; set; }
         public double UsedAmount { get; set; }
