@@ -13,6 +13,14 @@ builder.Services.AddDbContext<ContactsAPIDbContext>(option =>
 option.UseSqlServer("Data Source=AD-044\\SQLEXPRESS;Initial Catalog=LoanProvider;Integrated Security=True;Trusted_Connection=True;TrustServerCertificate=true;MultipleActiveResultSets=true;"));;
 /*builder.Services.AddDbContext<ContactsAPIDbContext>(option =>
 option.UseSqlServer(builder.Configuration.GetConnectionString("ContactAPIConnectionString")));*/
+builder.Services.AddCors(option =>
+{
+    option.AddDefaultPolicy(builder =>
+    {
+        builder.AllowAnyOrigin().AllowAnyHeader().AllowAnyHeader();
+    });
+});
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -23,6 +31,7 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+app.UseCors();
 
 app.UseAuthorization();
 
