@@ -29,7 +29,7 @@ namespace Loan_Provide.Controllers
                               
                           };
 
-            return Ok();
+            return Ok(result);
         }
 
 
