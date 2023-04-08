@@ -44,7 +44,7 @@ namespace Loan_Provide.Controllers
             }
             else
             
-                return NoContent();
+                return NotFound();
             
 
       

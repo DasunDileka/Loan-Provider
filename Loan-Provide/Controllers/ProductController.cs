@@ -36,7 +36,11 @@ namespace Loan_Provide.Controllers
                              Quantity = a.Quantity,
                              Customer = d.Name,
                              Category = c.Name,
-                             Brand = b.Name
+                             CategoryId = c.Id,
+                             Brand = b.Name,
+                             BrandId =b.Id
+                            
+                             
                          };
             return Ok(result);
         }
